@@ -2,6 +2,10 @@ module.exports = {
     Query: {
         videogames: async (_, __, { dataSources }) => {
             let data = await dataSources.VideogameDAO.all();
+            data = data.map((e) => {
+                e.eman = e.name.split("").reverse().join("");
+                return e;
+            });
             return data;
         },
         videogame: async (_, { id }, { dataSources }) =>
