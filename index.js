@@ -14,9 +14,6 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     dataSources: () => ({
-        // RestauranteAPI: new RestauranteAPI(),
-        // UsuarioAPI: new UsuarioAPI(),
-        // PuntuacionAPI: new PuntuacionAPI(),
         VideogameDAO: new VideogameDAO(),
         UserDAO: new UserDAO(),
         ScoreDAO: new ScoreDAO(),
